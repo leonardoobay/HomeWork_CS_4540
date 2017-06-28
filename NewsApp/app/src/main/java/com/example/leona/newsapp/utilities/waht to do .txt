@@ -1,0 +1,106 @@
+these go in oncreate
+
+  //called methods
+      //  toggleProgressBar();
+        //commented out loadnewsdata
+       // loadNewsData();
+    //**************************************************
+        //this will help us retrieve news info and display loading
+    //commented it out in the meanwhile
+//        private void loadNewsData() {
+//        toggleProgressBar();
+//        new FetchNewsTask().execute();
+//    }
+//    private void toggleProgressBar(){
+//        if(progress.getVisibility()==View.VISIBLE){
+//            progress.setVisibility(View.INVISIBLE);
+//        }else {
+//            progress.setVisibility(View.VISIBLE);
+//        }
+//    }
+//    //FIX THIS
+//       public boolean onOptionsItemSelected(MenuItem item) {
+//        int item_id = item.getItemId();
+//        //fix toast   and commented it out
+////        if(item_id == R.id.action_search){
+////            Toast.makeText(this, "LOADING", Toast.LENGTH_SHORT).show();
+////        }
+////        return true;
+//           if (item_id == R.id.action_search) {
+//               URL url = NetworkUtils.makeUrl();
+//              // URL url = NetworkUtils.makeURL();
+//                new FetchNewstask().execute(url);
+//             //  new FetchNewsTask().execute(url);
+//               return true;
+//           }
+//
+//           return super.onOptionsItemSelected(item);
+//    }
+////***********************************************
+//public class FetchNewstask extends AsyncTask<URL, Void, String> {
+//
+//   // String query;
+//
+// //   @Override
+////    protected void onPreExecute() {
+////        super.onPreExecute();
+////        textView.setText("");
+////        progress.setVisibility(View.VISIBLE);
+////
+////    }
+//    @Override
+//    protected String doInBackground(URL... params){
+//
+//        URL url = params[0];
+//        String result = null;
+//
+//        try{
+//            result = NetworkUtils.getResponseFromHttpUrl(url);
+//
+//        } catch (IOException e){
+//            e.printStackTrace();
+//        }
+//
+//        return result;
+//    }
+//    //*****************************
+//    //public class FetchNewsTask extends AsyncTask<String, Void, String[]> {
+//
+//      //  @Override
+////        protected String[] doInBackground(String... params) {
+////
+////
+////
+////            URL newsRequestUrl = NetworkUtils.makeUrl();
+////
+////            try {
+////                String jsonNewsResponse = NetworkUtils
+////                        .getResponseFromHttpUrl(newsRequestUrl);
+////
+////                String[] simpleJsonNewsData = OpenNewsJsonUtils
+////                        .getSimpleNewsStringsFromJson(MainActivity.this, jsonNewsResponse);
+////
+////                return simpleJsonNewsData;
+////
+////
+////            } catch (Exception e) {
+////                e.printStackTrace();
+////                return null;
+////            }
+////        }
+//
+//       // @Override
+////        protected void onPostExecute(String[] strings) {
+////            if (strings != null) {
+////                /*
+////                 * Iterate through the array and append the Strings to the TextView. The reason why we add
+////                 * the "\n\n\n" after the String is to give visual separation between each String in the
+////                 * TextView. Later, we'll learn about a better way to display lists of data.
+////                 */
+////                for (String newzString : strings) {
+////                    textView.append((newzString) + "\n\n\n");
+////                }
+////            }
+////        }
+//    }
+
