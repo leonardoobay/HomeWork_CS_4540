@@ -3,11 +3,18 @@ package com.example.leona.news_app.utilities;
 import android.net.Uri;
 import android.util.Log;
 
+import com.example.leona.news_app.model.NewsItem;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import static android.content.ContentValues.TAG;
@@ -71,6 +78,37 @@ public class NetworkUtils {
             urlConnection.disconnect();
         }
     }
+
+
+
+    public static ArrayList<NewsItem> parseJSON(String json) throws JSONException {
+        ArrayList<NewsItem> output = new ArrayList<>();
+
+        JSONObject main = new JSONObject(json);
+
+        JSONArray articles = main.getJSONArray("articles");
+
+        for(int i = 0; i < articles.length(); i++){
+            JSONObject article = articles.getJSONObject(i);
+
+            String title = article.getString("title");
+            String description = article.getString("description");
+            String url = article.getString("url");
+            String urlToImage = article.getString("urlToImage");
+            String author = article.getString("author");
+            String publishedAt = article.getString("publishedAt");
+
+            NewsItem item = new NewsItem(url,urlToImage,publishedAt,author,title,description);
+            output.add(item);
+        }
+
+        return output;
+    }
+
+
+
+
+
 }
 
 
